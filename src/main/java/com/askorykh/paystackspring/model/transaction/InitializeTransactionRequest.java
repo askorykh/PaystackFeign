@@ -61,35 +61,28 @@ public class InitializeTransactionRequest
      */
     private ArrayList<Channels> channels;
 
+    /**
+     * Optional - The split code of the transaction split. e.g. SPL_98WF13Eb3w
+     */
     private String split_code;
 
-    private String subaccount;
+    /**
+     * Optional - The code for the subaccount that owns the payment. e.g. ACCT_8f4s1eq7ml6rlzj
+     */
+    @JsonProperty("subaccount")
+    private String subAccount;
 
+    /**
+     * Optional - A flat fee to charge the sub-account for this transaction ().
+     * This overrides the split percentage set when the sub-account was created.
+     * Ideally, you will need to use this if you are splitting in flat rates
+     * (since sub-account creation only allows for percentage split). e.g. 7000 for a 70 naira flat fee.
+     */
     @JsonProperty("transaction_charge")
     private Long transactionCharge;
-}
 
-//    plan
-//    string
-//    If transaction is to create a subscription to a predefined plan, provide plan code here. This would invalidate the value provided in amount
-//    invoice_limit
-//    integer
-//    Number of times to charge customer during subscription to plan
-//    metadata
-//    string
-//    Stringified JSON object of custom data. Kindly check the Metadata page for more information.
-//    channels
-//    array
-//    An array of payment channels to control what channels you want to make available to the user to make a payment with. Available channels include: ['card', 'bank', 'ussd', 'qr', 'mobile_money', 'bank_transfer']
-//    split_code
-//    string
-//    The split code of the transaction split. e.g. SPL_98WF13Eb3w
-//    subaccount
-//    string
-//    The code for the subaccount that owns the payment. e.g. ACCT_8f4s1eq7ml6rlzj
-//    transaction_charge
-//    integer
-//    A flat fee to charge the subaccount for this transaction (). This overrides the split percentage set when the subaccount was created. Ideally, you will need to use this if you are splitting in flat rates (since subaccount creation only allows for percentage split). e.g. 7000 for a 70 naira flat fee.
-//    bearer
-//    string
-//    Who bears Paystack charges? account or subaccount (defaults to account).
+    /**
+     * Optional - Who bears Paystack charges? account or sub-account (defaults to account).
+     */
+    private String bearer;
+}
