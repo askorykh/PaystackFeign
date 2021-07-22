@@ -21,10 +21,6 @@ import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL;
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class InitializeTransactionResponse
+public class VerifyTransactionResponse
 {
-    private Boolean status;
-    private String message;
-    private InitializeTransactionDataResponse data;
 }
-

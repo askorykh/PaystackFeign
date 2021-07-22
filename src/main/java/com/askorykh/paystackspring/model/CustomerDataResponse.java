@@ -13,7 +13,10 @@ import lombok.Setter;
 import org.joda.time.DateTime;
 
 import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL;
-
+/**
+ * @author o.skorykh
+ * @version 1.0
+ */
 @Getter
 @Setter
 @Builder

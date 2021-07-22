@@ -8,6 +8,10 @@ import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 
+/**
+ * @author o.skorykh
+ * @version 1.0
+ */
 public class CustomDateTimeDeserializer extends StdDeserializer<DateTime>
 {
     private static final long serialVersionUID = 1L;

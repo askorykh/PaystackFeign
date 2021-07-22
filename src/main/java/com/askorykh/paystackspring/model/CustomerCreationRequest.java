@@ -11,6 +11,9 @@ import lombok.Setter;
  * However, when creating a customer that would be assigned a Dedicated NUBAN and
  * your business category falls under Betting, Financial services, and General Service,
  * then these parameters become compulsory.
+ *
+ * @author o.skorykh
+ * @version 1.0
  */
 @Getter
 @Setter
