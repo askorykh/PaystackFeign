@@ -11,8 +11,11 @@ import feign.Headers;
 import feign.Param;
 import feign.RequestLine;
 
+/**
+ * @author o.skorykh
+ * @version 1.0
+ */
 @Headers("Content-Type: application/json")
-
 public interface PaystackPaymentAPI
 {
     /**

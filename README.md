@@ -1,8 +1,17 @@
 # PaystackFeign -- WIP
 
-Library for easy interaction with Paystack API
+------
+Library for easy interaction with Paystack API using [Feign](https://github.com/OpenFeign/feign).
 
-To start using you need to create a PaystackPaymentAPI bean.
+Feign is a Java to HTTP client binder inspired by Retrofit, JAXRS-2.0, and WebSocket.
+
+# Getting started
+
+------
+This library is using Jackson at the moment, but goal is to introduce 2 modules to support both Jackson and Gson depending what is already on the classpath.
+
+To start using you need to create a PaystackPaymentAPI bean using Feign, also HystrixFeign can be used or Resilience4jFeign if you want to have CircuitBreaker.
+`Secret Key` is the one that you can get from Paystack Dashboard, and add to the bean from Eenvironment Variables, or application properties, or just hard-code(not advised)
 
     @Bean
     public PaystackPaymentAPI paystackPaymentAPI()
@@ -14,3 +23,27 @@ To start using you need to create a PaystackPaymentAPI bean.
             .target(PaystackPaymentAPI.class, "https://api.paystack.co");
 
     }
+
+### Current supported entities and endpoints
+
+-----
+
+#### Transaction:
+
+* InitializeTransaction
+* VerifyTransaction
+
+#### Customer:
+
+* CreateCustomer
+
+#### Plans:
+
+* CreatePlan
+
+# ToDos
+
+-----
+
+- [ ] divide library into 3 modules: core, paystackfeign-gson, paystackfeign-jackson
+- [ ] check what library currently used in the classpath and load respective module
