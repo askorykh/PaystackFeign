@@ -24,8 +24,8 @@ Feign is a Java to HTTP client binder inspired by Retrofit, JAXRS-2.0, and WebSo
 ------
 This library is using Jackson at the moment, but goal is to introduce 2 modules to support both Jackson and Gson depending what is already on the classpath.
 
-To start using you need to create a PaystackPaymentAPI bean using Feign, also HystrixFeign can be used or Resilience4jFeign if you want to have CircuitBreaker.
-`Secret Key` is the one that you can get from Paystack Dashboard, and add to the bean from Eenvironment Variables, or application properties, or just hard-code(not advised)
+To start using you need to create a PaystackPaymentAPI bean using Feign, also HystrixFeign can be used or Resilience4jFeign if you want to have CircuitBreaker. \
+`Secret Key` is the one that you can get from Paystack Dashboard, and add to the bean from Environment Variables, or application properties, or just hard-code(not advised)
 
     @Bean
     public PaystackPaymentAPI paystackPaymentAPI()
