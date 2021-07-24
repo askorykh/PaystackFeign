@@ -11,6 +11,14 @@ Feign is a Java to HTTP client binder inspired by Retrofit, JAXRS-2.0, and WebSo
 
 * Java 11
 
+#### Dependencies defined in pom.xml:
+
+[@FasterXML/jackson-annotations](https://github.com/FasterXML/jackson-annotations) com.fasterxml.jackson.core:jackson-annotations 2.12.1 \
+[@FasterXML/jackson-databind](https://github.com/FasterXML/jackson-databind) com.fasterxml.jackson.core:jackson-databind >= 2.9.10.7 \
+[@OpenFeign/feign](https://github.com/OpenFeign/feign) io.github.openfeign:feign-core 10.12 \
+[@apache/maven-plugins](https://github.com/apache/maven-plugins) org.apache.maven.plugins:maven-compiler-plugin 3.8.1 \
+[@projectlombok/lombok](https://github.com/projectlombok/lombok) org.projectlombok:lombok 1.18.20
+
 # Getting started
 
 ------
