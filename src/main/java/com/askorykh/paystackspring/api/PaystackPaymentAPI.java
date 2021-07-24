@@ -47,7 +47,7 @@ public interface PaystackPaymentAPI
      * @return object FetchTransactionResponse with Transaction information
      * @see FetchTransactionResponse
      */
-    @RequestLine("GET /transaction/verify/{id}")
+    @RequestLine("GET /transaction/{id}")
     FetchTransactionResponse fetchTransaction(@Param("id") String id);
 
     /**
