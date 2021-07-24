@@ -7,7 +7,10 @@ import com.askorykh.paystackspring.dto.plan.PlanCreationResponse;
 import com.askorykh.paystackspring.dto.transaction.FetchTransactionResponse;
 import com.askorykh.paystackspring.dto.transaction.InitializeTransactionRequest;
 import com.askorykh.paystackspring.dto.transaction.InitializeTransactionResponse;
+import com.askorykh.paystackspring.dto.transaction.TransactionTimelineResponse;
 import com.askorykh.paystackspring.dto.transaction.VerifyTransactionResponse;
+import com.askorykh.paystackspring.dto.transaction.authorization.CheckAuthorizationRequest;
+import com.askorykh.paystackspring.dto.transaction.authorization.CheckAuthorizationResponse;
 import feign.Headers;
 import feign.Param;
 import feign.RequestLine;
@@ -23,7 +26,7 @@ public interface PaystackPaymentAPI
      * Initialize a transaction from your backend
      *
      * @param initializeTransactionRequest request
-     * @return object InitializeTransactionResponse with authorization information about transaction
+     * @return InitializeTransactionResponse with authorization information about transaction
      * @see InitializeTransactionRequest
      * @see InitializeTransactionResponse
      */
@@ -34,7 +37,7 @@ public interface PaystackPaymentAPI
      * Confirm the status of a transaction
      *
      * @param reference The transaction reference used to initiate the transaction
-     * @return object VerifyTransactionResponse with Transaction information
+     * @return VerifyTransactionResponse with Transaction information
      * @see VerifyTransactionResponse
      */
     @RequestLine("GET /transaction/verify/{reference}")
@@ -44,17 +47,49 @@ public interface PaystackPaymentAPI
      * Get details of a transaction carried out on your integration.
      *
      * @param id An ID for the transaction to fetch
-     * @return object FetchTransactionResponse with Transaction information
+     * @return FetchTransactionResponse with Transaction information
      * @see FetchTransactionResponse
      */
     @RequestLine("GET /transaction/{id}")
     FetchTransactionResponse fetchTransaction(@Param("id") String id);
 
     /**
+     * All mastercard and visa authorizations can be checked with this endpoint to know if they have funds for the payment you seek.
+     * <p>
+     * This endpoint should be used when you do not know the exact amount to charge a card when rendering a service. It should be used to check if a card has enough funds based on a maximum range value. It is well suited for:
+     * <p>
+     * - Ride hailing services
+     * - Logistics services
+     * <p>
+     * !!!
+     * Warning
+     * You shouldn't use this endpoint to check a card for sufficient funds if you are going to charge the user immediately.
+     * This is because we hold funds when this endpoint is called which can lead to an insufficient funds error.
+     * !!!
+     *
+     * @param planCreationRequest request
+     * @return CheckAuthorizationResponse
+     * @see CheckAuthorizationRequest
+     * @see CheckAuthorizationResponse
+     */
+    @RequestLine("POST /transaction/check_authorization")
+    CheckAuthorizationResponse checkAuthorization(CheckAuthorizationRequest planCreationRequest);
+
+    /**
+     * Get details of a transaction carried out on your integration.
+     *
+     * @param idOrReference The ID or the reference of the transaction
+     * @return TransactionTimelineResponse with the timeline of a transaction
+     * @see TransactionTimelineResponse
+     */
+    @RequestLine("GET /transaction/timeline/{idOrReference}")
+    TransactionTimelineResponse viewTimelineOfTransaction(@Param("idOrReference") String idOrReference);
+
+    /**
      * Create a plan on your integration
      *
      * @param planCreationRequest request
-     * @return response
+     * @return PlanCreationResponse
      * @see PlanCreationRequest
      * @see PlanCreationResponse
      */

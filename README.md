@@ -46,17 +46,19 @@ To start using you need to create a PaystackPaymentAPI bean using Feign, also Hy
 
 #### Transaction:
 
-* InitializeTransaction
-* VerifyTransaction
-* FetchTransaction
+* Initialize Transaction
+* Verify Transaction
+* Fetch Transaction
+* View Transaction Timeline
+* Check Authorization
 
 #### Customer:
 
-* CreateCustomer
+* Create Customer
 
 #### Plans:
 
-* CreatePlan
+* Create Plan
 
 # ToDos
 
