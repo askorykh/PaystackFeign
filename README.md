@@ -5,6 +5,12 @@ Library for easy interaction with Paystack API using [Feign](https://github.com/
 
 Feign is a Java to HTTP client binder inspired by Retrofit, JAXRS-2.0, and WebSocket.
 
+# Requirements
+
+------
+
+* Java 11
+
 # Getting started
 
 ------
