@@ -7,15 +7,16 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import java.time.ZonedDateTime;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
-import org.joda.time.DateTime;
 
 import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL;
+
 /**
  * @author o.skorykh
  * @version 1.0
@@ -46,8 +47,8 @@ public class PlanDataResponse
     private Currency currency;
     private Long id;
     @JsonDeserialize(using = ZonedDateTimeDeserializer.class)
-    private DateTime createdAt;
+    private ZonedDateTime createdAt;
     @JsonDeserialize(using = ZonedDateTimeDeserializer.class)
-    private DateTime updatedAt;
+    private ZonedDateTime updatedAt;
 }
 
