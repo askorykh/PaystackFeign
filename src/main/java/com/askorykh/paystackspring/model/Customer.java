@@ -8,6 +8,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL;
 
@@ -22,6 +23,7 @@ import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL;
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
+@ToString
 public class Customer
 {
     private Long id;
@@ -32,4 +34,8 @@ public class Customer
     @JsonProperty("last_name")
     private String lastName;
     private String email;
+    private String phone;
+    @JsonProperty("risk_action")
+    private String riskAction;
+    private Metadata metadata;
 }

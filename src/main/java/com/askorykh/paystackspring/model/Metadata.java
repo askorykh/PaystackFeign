@@ -1,7 +1,9 @@
-package com.askorykh.paystackspring.dto.customer;
+package com.askorykh.paystackspring.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import java.util.ArrayList;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -10,6 +12,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL;
+
 /**
  * @author o.skorykh
  * @version 1.0
@@ -22,9 +25,9 @@ import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL;
 @AllArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
 @ToString
-public class CustomerCreationResponse
+public class Metadata
 {
-    private boolean status;
-    private String message;
-    private CustomerDataResponse data;
+    @JsonProperty("custom_fields")
+    private ArrayList<CustomFields> customFields;
+    private String referrer;
 }

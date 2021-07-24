@@ -4,6 +4,7 @@ import com.askorykh.paystackspring.dto.customer.CustomerCreationRequest;
 import com.askorykh.paystackspring.dto.customer.CustomerCreationResponse;
 import com.askorykh.paystackspring.dto.plan.PlanCreationRequest;
 import com.askorykh.paystackspring.dto.plan.PlanCreationResponse;
+import com.askorykh.paystackspring.dto.transaction.FetchTransactionResponse;
 import com.askorykh.paystackspring.dto.transaction.InitializeTransactionRequest;
 import com.askorykh.paystackspring.dto.transaction.InitializeTransactionResponse;
 import com.askorykh.paystackspring.dto.transaction.VerifyTransactionResponse;
@@ -38,6 +39,16 @@ public interface PaystackPaymentAPI
      */
     @RequestLine("GET /transaction/verify/{reference}")
     VerifyTransactionResponse verifyTransaction(@Param("reference") String reference);
+
+    /**
+     * Get details of a transaction carried out on your integration.
+     *
+     * @param id An ID for the transaction to fetch
+     * @return object FetchTransactionResponse with Transaction information
+     * @see FetchTransactionResponse
+     */
+    @RequestLine("GET /transaction/verify/{id}")
+    FetchTransactionResponse fetchTransaction(@Param("id") String id);
 
     /**
      * Create a plan on your integration
