@@ -33,6 +33,8 @@ To start using you need to create a PaystackPaymentAPI bean using Feign, also Hy
         return Feign.builder()
             .encoder(new JacksonEncoder()) // You can uses Gson as well
             .decoder(new JacksonDecoder()) // You can uses Gson as well
+            //If you have [error code: 1010] and HTTP code 403, this means calls are blocked by Cloudflare for example, due to not correct User-Agent, in this case valid web user agent can be used, like:
+            .requestInterceptor(new UserAgentInterceptor("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36"))
             .requestInterceptor(new AuthorizationInterceptor(secretKey))
             .target(PaystackPaymentAPI.class, "https://api.paystack.co");
 
