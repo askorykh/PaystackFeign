@@ -1,4 +1,4 @@
-package com.askorykh.paystackspring.model;
+package com.askorykh.paystackspring.dto.customer;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Map;

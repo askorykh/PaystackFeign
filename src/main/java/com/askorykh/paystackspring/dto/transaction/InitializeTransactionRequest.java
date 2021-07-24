@@ -1,4 +1,4 @@
-package com.askorykh.paystackspring.model.transaction;
+package com.askorykh.paystackspring.dto.transaction;
 
 import com.askorykh.paystackspring.model.support.Channels;
 import com.askorykh.paystackspring.model.support.Currency;

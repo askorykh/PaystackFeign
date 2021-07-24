@@ -1,4 +1,4 @@
-package com.askorykh.paystackspring.model;
+package com.askorykh.paystackspring.dto.plan;
 
 import com.askorykh.paystackspring.model.support.Currency;
 import com.askorykh.paystackspring.model.support.Interval;

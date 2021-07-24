@@ -1,12 +1,12 @@
 package com.askorykh.paystackspring.api;
 
-import com.askorykh.paystackspring.model.CustomerCreationRequest;
-import com.askorykh.paystackspring.model.CustomerCreationResponse;
-import com.askorykh.paystackspring.model.PlanCreationRequest;
-import com.askorykh.paystackspring.model.PlanCreationResponse;
-import com.askorykh.paystackspring.model.transaction.InitializeTransactionRequest;
-import com.askorykh.paystackspring.model.transaction.InitializeTransactionResponse;
-import com.askorykh.paystackspring.model.transaction.VerifyTransactionResponse;
+import com.askorykh.paystackspring.dto.customer.CustomerCreationRequest;
+import com.askorykh.paystackspring.dto.customer.CustomerCreationResponse;
+import com.askorykh.paystackspring.dto.plan.PlanCreationRequest;
+import com.askorykh.paystackspring.dto.plan.PlanCreationResponse;
+import com.askorykh.paystackspring.dto.transaction.InitializeTransactionRequest;
+import com.askorykh.paystackspring.dto.transaction.InitializeTransactionResponse;
+import com.askorykh.paystackspring.dto.transaction.VerifyTransactionResponse;
 import feign.Headers;
 import feign.Param;
 import feign.RequestLine;

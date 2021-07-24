@@ -1,18 +1,19 @@
-package com.askorykh.paystackspring.model;
+package com.askorykh.paystackspring.dto.customer;
 
-import com.askorykh.paystackspring.util.CustomDateTimeDeserializer;
+import com.askorykh.paystackspring.util.ZonedDateTimeDeserializer;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import java.time.ZonedDateTime;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.joda.time.DateTime;
 
 import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL;
+
 /**
  * @author o.skorykh
  * @version 1.0
@@ -34,8 +35,8 @@ public class CustomerDataResponse
     private Long id;
     private Boolean identified;
     private String identification;
-    @JsonDeserialize(using = CustomDateTimeDeserializer.class)
-    private DateTime createdAt;
-    @JsonDeserialize(using = CustomDateTimeDeserializer.class)
-    private DateTime updatedAt;
+    @JsonDeserialize(using = ZonedDateTimeDeserializer.class)
+    private ZonedDateTime createdAt;
+    @JsonDeserialize(using = ZonedDateTimeDeserializer.class)
+    private ZonedDateTime updatedAt;
 }

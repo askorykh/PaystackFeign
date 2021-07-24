@@ -1,4 +1,4 @@
-package com.askorykh.paystackspring.model.transaction;
+package com.askorykh.paystackspring.dto.plan;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -9,7 +9,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL;
-
 /**
  * @author o.skorykh
  * @version 1.0
@@ -21,10 +20,10 @@ import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL;
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class InitializeTransactionResponse
+public class PlanCreationResponse
 {
-    private Boolean status;
+    private boolean status;
     private String message;
-    private InitializeTransactionDataResponse data;
-}
+    private PlanDataResponse data;
 
+}

@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL;
+
 /**
  * @author o.skorykh
  * @version 1.0
@@ -20,9 +21,9 @@ import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL;
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class CustomerCreationResponse
+public class History
 {
-    private Boolean status;
+    private String type;
     private String message;
-    private CustomerDataResponse data;
+    private Long time;
 }

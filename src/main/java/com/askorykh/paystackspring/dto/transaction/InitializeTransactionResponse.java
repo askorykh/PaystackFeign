@@ -1,4 +1,4 @@
-package com.askorykh.paystackspring.model.transaction;
+package com.askorykh.paystackspring.dto.transaction;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -21,6 +21,10 @@ import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL;
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class VerifyTransactionResponse
+public class InitializeTransactionResponse
 {
+    private boolean status;
+    private String message;
+    private InitializeTransactionDataResponse data;
 }
+

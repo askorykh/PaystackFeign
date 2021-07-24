@@ -1,4 +1,4 @@
-package com.askorykh.paystackspring.model.transaction;
+package com.askorykh.paystackspring.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -22,11 +22,14 @@ import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL;
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class InitializeTransactionDataResponse
+public class Customer
 {
-    @JsonProperty("authorization_url")
-    private String authorizationUrl;
-    @JsonProperty("access_code")
-    private String access_code;
-    private String reference;
+    private Long id;
+    @JsonProperty("customer_code")
+    private String customerCode;
+    @JsonProperty("first_name")
+    private String firstName;
+    @JsonProperty("last_name")
+    private String lastName;
+    private String email;
 }

@@ -1,8 +1,8 @@
-package com.askorykh.paystackspring.model;
+package com.askorykh.paystackspring.dto.plan;
 
 import com.askorykh.paystackspring.model.support.Currency;
 import com.askorykh.paystackspring.model.support.Interval;
-import com.askorykh.paystackspring.util.CustomDateTimeDeserializer;
+import com.askorykh.paystackspring.util.ZonedDateTimeDeserializer;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -43,9 +43,9 @@ public class PlanDataResponse
     private Boolean hostedPage;
     private Currency currency;
     private Long id;
-    @JsonDeserialize(using = CustomDateTimeDeserializer.class)
+    @JsonDeserialize(using = ZonedDateTimeDeserializer.class)
     private DateTime createdAt;
-    @JsonDeserialize(using = CustomDateTimeDeserializer.class)
+    @JsonDeserialize(using = ZonedDateTimeDeserializer.class)
     private DateTime updatedAt;
 }
 
