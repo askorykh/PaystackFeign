@@ -66,3 +66,21 @@ To start using you need to create a PaystackPaymentAPI bean using Feign, also Hy
 
 - [ ] divide library into 3 modules: core, paystackfeign-gson, paystackfeign-jackson
 - [ ] check what library currently used in the classpath and load respective module
+- [ ] Finish Transactions API
+- [ ] Finish Transaction Splits API
+- [ ] Finish Customer API
+- [ ] Finish Subaccounts API
+- [ ] Finish Plans API
+- [ ] Finish Subscriptions API
+- [ ] Finish Products API
+- [ ] Finish Payment Page API
+- [ ] Finish Invoices API
+- [ ] Finish Settlements API
+- [ ] Finish Bulk Charges API
+- [ ] Finish Settlements API
+- [ ] Finish Charge API
+- [ ] Finish Disputes API
+- [ ] Finish Refunds API
+- [ ] Finish Refunds API
+- [ ] Finish Refunds API
+
