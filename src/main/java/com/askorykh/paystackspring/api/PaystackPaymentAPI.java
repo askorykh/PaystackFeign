@@ -11,6 +11,8 @@ import com.askorykh.paystackspring.dto.transaction.InitializeTransactionRequest;
 import com.askorykh.paystackspring.dto.transaction.InitializeTransactionResponse;
 import com.askorykh.paystackspring.dto.transaction.ListTransactionsRequest;
 import com.askorykh.paystackspring.dto.transaction.ListTransactionsResponse;
+import com.askorykh.paystackspring.dto.transaction.PartialDebitRequest;
+import com.askorykh.paystackspring.dto.transaction.PartialDebitResponse;
 import com.askorykh.paystackspring.dto.transaction.TotalsTransactionsRequest;
 import com.askorykh.paystackspring.dto.transaction.TotalsTransactionsResponse;
 import com.askorykh.paystackspring.dto.transaction.TransactionTimelineResponse;
@@ -137,6 +139,17 @@ public interface PaystackPaymentAPI
      */
     @RequestLine("GET /transaction/export")
     ExportTransactionsResponse exportTransactions(@QueryMap ExportTransactionsRequest request);
+
+    /**
+     * Retrieve part of a payment from a customer
+     *
+     * @param partialDebitRequest PartialDebitRequest
+     * @return PartialDebitResponse
+     * @see PartialDebitResponse
+     * @see PartialDebitRequest
+     */
+    @RequestLine("POST /transaction/partial_debit")
+    PartialDebitResponse doPartialDebit(PartialDebitRequest partialDebitRequest);
 
     /**
      * Create a plan on your integration

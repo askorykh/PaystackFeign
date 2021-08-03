@@ -55,6 +55,7 @@ To start using you need to create a PaystackPaymentAPI bean using Feign, also Hy
 * [View Transaction Timeline](https://paystack.com/docs/api/#transaction-view-timeline)
 * [Transaction Totals](https://paystack.com/docs/api/#transaction-totals)
 * [Export Transactions](https://paystack.com/docs/api/#transaction-export)
+* [Partial Debit](https://paystack.com/docs/api/#transaction-partial-debit)
 
 #### Customer:
 
@@ -70,7 +71,7 @@ To start using you need to create a PaystackPaymentAPI bean using Feign, also Hy
 
 - [ ] divide library into 3 modules: core, paystackfeign-gson, paystackfeign-jackson
 - [ ] check what library currently used in the classpath and load respective module
-- [ ] Finish Transactions API
+- [x] Finish Transactions API
 - [ ] Finish Transaction Splits API
 - [ ] Finish Customer API
 - [ ] Finish Subaccounts API
