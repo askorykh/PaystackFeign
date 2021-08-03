@@ -40,7 +40,7 @@ To start using you need to create a PaystackPaymentAPI bean using Feign, also Hy
 
     }
 
-### Current supported entities and endpoints
+### Currently, supported entities and endpoints
 
 -----
 
