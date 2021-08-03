@@ -86,6 +86,4 @@ To start using you need to create a PaystackPaymentAPI bean using Feign, also Hy
 - [ ] Finish Charge API
 - [ ] Finish Disputes API
 - [ ] Finish Refunds API
-- [ ] Finish Refunds API
-- [ ] Finish Refunds API
 
