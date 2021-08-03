@@ -11,6 +11,8 @@ import com.askorykh.paystackspring.dto.transaction.InitializeTransactionRequest;
 import com.askorykh.paystackspring.dto.transaction.InitializeTransactionResponse;
 import com.askorykh.paystackspring.dto.transaction.ListTransactionsRequest;
 import com.askorykh.paystackspring.dto.transaction.ListTransactionsResponse;
+import com.askorykh.paystackspring.dto.transaction.TotalsTransactionsRequest;
+import com.askorykh.paystackspring.dto.transaction.TotalsTransactionsResponse;
 import com.askorykh.paystackspring.dto.transaction.TransactionTimelineResponse;
 import com.askorykh.paystackspring.dto.transaction.VerifyTransactionResponse;
 import com.askorykh.paystackspring.dto.transaction.authorization.CheckAuthorizationRequest;
@@ -100,6 +102,17 @@ public interface PaystackPaymentAPI
      */
     @RequestLine("GET /transaction/timeline/{idOrReference}")
     TransactionTimelineResponse viewTimelineOfTransaction(@Param("idOrReference") String idOrReference);
+
+    /**
+     * Total amount received on your account
+     *
+     * @param request TotalsTransactionsRequest
+     * @return TotalsTransactionsResponse
+     * @see TotalsTransactionsResponse
+     * @see TotalsTransactionsRequest
+     */
+    @RequestLine("GET /transaction/totals")
+    TotalsTransactionsResponse getTotalsTransactions(@QueryMap TotalsTransactionsRequest request);
 
     /**
      * Export a List of transactions carried out on your integration as csv
