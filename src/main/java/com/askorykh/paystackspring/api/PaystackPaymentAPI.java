@@ -7,12 +7,15 @@ import com.askorykh.paystackspring.dto.plan.PlanCreationResponse;
 import com.askorykh.paystackspring.dto.transaction.FetchTransactionResponse;
 import com.askorykh.paystackspring.dto.transaction.InitializeTransactionRequest;
 import com.askorykh.paystackspring.dto.transaction.InitializeTransactionResponse;
+import com.askorykh.paystackspring.dto.transaction.ListTransactionsRequest;
+import com.askorykh.paystackspring.dto.transaction.ListTransactionsResponse;
 import com.askorykh.paystackspring.dto.transaction.TransactionTimelineResponse;
 import com.askorykh.paystackspring.dto.transaction.VerifyTransactionResponse;
 import com.askorykh.paystackspring.dto.transaction.authorization.CheckAuthorizationRequest;
 import com.askorykh.paystackspring.dto.transaction.authorization.CheckAuthorizationResponse;
 import feign.Headers;
 import feign.Param;
+import feign.QueryMap;
 import feign.RequestLine;
 
 /**
@@ -42,6 +45,17 @@ public interface PaystackPaymentAPI
      */
     @RequestLine("GET /transaction/verify/{reference}")
     VerifyTransactionResponse verifyTransaction(@Param("reference") String reference);
+
+    /**
+     * List transactions carried out on your integration.
+     *
+     * @param request request
+     * @return ListTransactionsResponse with list of transactions
+     * @see ListTransactionsResponse
+     * @see ListTransactionsRequest
+     */
+    @RequestLine("GET /transaction")
+    ListTransactionsResponse getTransactionsList(@QueryMap ListTransactionsRequest request);
 
     /**
      * Get details of a transaction carried out on your integration.
