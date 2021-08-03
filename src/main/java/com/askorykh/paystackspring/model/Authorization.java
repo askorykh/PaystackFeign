@@ -1,6 +1,6 @@
 package com.askorykh.paystackspring.model;
 
-import com.askorykh.paystackspring.model.support.Channels;
+import com.askorykh.paystackspring.model.support.Channel;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -38,7 +38,7 @@ public class Authorization
     private String expYear;
     private String bin;
     private String bank;
-    private Channels channel;
+    private Channel channel;
     private String signature;
     private boolean reusable;
     @JsonProperty("country_code")

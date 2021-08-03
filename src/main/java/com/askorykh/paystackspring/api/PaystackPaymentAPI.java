@@ -15,6 +15,8 @@ import com.askorykh.paystackspring.dto.transaction.TotalsTransactionsRequest;
 import com.askorykh.paystackspring.dto.transaction.TotalsTransactionsResponse;
 import com.askorykh.paystackspring.dto.transaction.TransactionTimelineResponse;
 import com.askorykh.paystackspring.dto.transaction.VerifyTransactionResponse;
+import com.askorykh.paystackspring.dto.transaction.authorization.ChargeAuthorizationRequest;
+import com.askorykh.paystackspring.dto.transaction.authorization.ChargeAuthorizationResponse;
 import com.askorykh.paystackspring.dto.transaction.authorization.CheckAuthorizationRequest;
 import com.askorykh.paystackspring.dto.transaction.authorization.CheckAuthorizationResponse;
 import feign.Headers;
@@ -70,6 +72,17 @@ public interface PaystackPaymentAPI
      */
     @RequestLine("GET /transaction/{id}")
     FetchTransactionResponse fetchTransaction(@Param("id") String id);
+
+    /**
+     * All authorizations marked as reusable can be charged with this endpoint whenever you need to receive payments.
+     *
+     * @param chargeAuthorizationRequest ChargeAuthorizationRequest
+     * @return ChargeAuthorizationResponse
+     * @see ChargeAuthorizationResponse
+     * @see ChargeAuthorizationRequest
+     */
+    @RequestLine("POST /transaction/charge_authorization")
+    ChargeAuthorizationResponse chargeAuthorization(ChargeAuthorizationRequest chargeAuthorizationRequest);
 
     /**
      * All mastercard and visa authorizations can be checked with this endpoint to know if they have funds for the payment you seek.

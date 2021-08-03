@@ -4,7 +4,7 @@ import com.askorykh.paystackspring.model.Authorization;
 import com.askorykh.paystackspring.model.Customer;
 import com.askorykh.paystackspring.model.Log;
 import com.askorykh.paystackspring.model.Metadata;
-import com.askorykh.paystackspring.model.support.Channels;
+import com.askorykh.paystackspring.model.support.Channel;
 import com.askorykh.paystackspring.model.support.Currency;
 import com.askorykh.paystackspring.util.ZonedDateTimeDeserializer;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -49,7 +49,7 @@ public class FetchTransactionDataResponse
     @JsonProperty("created_at")
     @JsonDeserialize(using = ZonedDateTimeDeserializer.class)
     private ZonedDateTime createdAt;
-    private Channels channel;
+    private Channel channel;
     private Currency currency;
     @JsonProperty("ip_address")
     private String ipAddress;

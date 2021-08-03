@@ -1,9 +1,11 @@
-package com.askorykh.paystackspring.dto.transaction;
+package com.askorykh.paystackspring.dto.transaction.authorization;
 
 import com.askorykh.paystackspring.model.Authorization;
 import com.askorykh.paystackspring.model.Customer;
 import com.askorykh.paystackspring.model.Log;
+import com.askorykh.paystackspring.model.Metadata;
 import com.askorykh.paystackspring.model.support.Channel;
+import com.askorykh.paystackspring.model.support.Currency;
 import com.askorykh.paystackspring.util.ZonedDateTimeDeserializer;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -31,27 +33,27 @@ import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL;
 @AllArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
 @ToString
-public class VerifyTransactionDataResponse
+public class ChargeAuthorizationDataResponse
 {
     private Long amount;
+    private Currency currency;
     @JsonProperty("transaction_date")
     @JsonDeserialize(using = ZonedDateTimeDeserializer.class)
     private ZonedDateTime transactionDate;
     private String status;
     private String reference;
     private String domain;
-    private Long metadata;
+    private Metadata metadata;
     @JsonProperty("gateway_response")
     private String gatewayResponse;
     private String message;
     private Channel channel;
     @JsonProperty("ip_address")
-    private String ipAddress;
+    private String ip_address;
     private Log log;
-    private Object fees;
+    private Long fees;
     private Authorization authorization;
     private Customer customer;
-    private String plan;
-    @JsonProperty("requested_amount")
-    private Long requestedAmount;
+    private Object plan;
+    private Long id;
 }

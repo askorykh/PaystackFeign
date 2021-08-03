@@ -50,6 +50,7 @@ To start using you need to create a PaystackPaymentAPI bean using Feign, also Hy
 * [Verify Transaction](https://paystack.com/docs/api/#transaction-verify)
 * [List Transactions](https://paystack.com/docs/api/#transaction-list)
 * [Fetch Transaction](https://paystack.com/docs/api/#transaction-fetch)
+* [Charge Authorization](https://paystack.com/docs/api/#transaction-charge-authorization)
 * [Check Authorization](https://paystack.com/docs/api/#transaction-check-authorization)
 * [View Transaction Timeline](https://paystack.com/docs/api/#transaction-view-timeline)
 * [Transaction Totals](https://paystack.com/docs/api/#transaction-totals)

@@ -1,6 +1,6 @@
 package com.askorykh.paystackspring.dto.transaction;
 
-import com.askorykh.paystackspring.model.support.Channels;
+import com.askorykh.paystackspring.model.support.Channel;
 import com.askorykh.paystackspring.model.support.Currency;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.ArrayList;
@@ -63,7 +63,7 @@ public class InitializeTransactionRequest
      * to make available to the user to make a payment with.
      * Available channels include: ['card', 'bank', 'ussd', 'qr', 'mobile_money', 'bank_transfer']
      */
-    private ArrayList<Channels> channels;
+    private ArrayList<Channel> channels;
 
     /**
      * Optional - The split code of the transaction split. e.g. SPL_98WF13Eb3w

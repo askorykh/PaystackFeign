@@ -1,6 +1,6 @@
 package com.askorykh.paystackspring.model;
 
-import com.askorykh.paystackspring.model.support.Channels;
+import com.askorykh.paystackspring.model.support.Channel;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -37,7 +37,7 @@ public class Log
     private Long errors;
     private boolean success;
     private boolean mobile;
-    private Channels channels;
+    private Channel channels;
     private ArrayList<Object> input;
     private ArrayList<History> history;
 
