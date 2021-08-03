@@ -4,6 +4,8 @@ import com.askorykh.paystackspring.dto.customer.CustomerCreationRequest;
 import com.askorykh.paystackspring.dto.customer.CustomerCreationResponse;
 import com.askorykh.paystackspring.dto.plan.PlanCreationRequest;
 import com.askorykh.paystackspring.dto.plan.PlanCreationResponse;
+import com.askorykh.paystackspring.dto.transaction.ExportTransactionsRequest;
+import com.askorykh.paystackspring.dto.transaction.ExportTransactionsResponse;
 import com.askorykh.paystackspring.dto.transaction.FetchTransactionResponse;
 import com.askorykh.paystackspring.dto.transaction.InitializeTransactionRequest;
 import com.askorykh.paystackspring.dto.transaction.InitializeTransactionResponse;
@@ -98,6 +100,17 @@ public interface PaystackPaymentAPI
      */
     @RequestLine("GET /transaction/timeline/{idOrReference}")
     TransactionTimelineResponse viewTimelineOfTransaction(@Param("idOrReference") String idOrReference);
+
+    /**
+     * Export a List of transactions carried out on your integration as csv
+     *
+     * @param request ExportTransactionsRequest
+     * @return ExportTransactionsResponse  with path to csv
+     * @see ExportTransactionsResponse
+     * @see ExportTransactionsRequest
+     */
+    @RequestLine("GET /transaction/export")
+    ExportTransactionsResponse exportTransactions(@QueryMap ExportTransactionsRequest request);
 
     /**
      * Create a plan on your integration
